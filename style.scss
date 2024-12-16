@@ -1,0 +1,130 @@
+/* Reset body and create full screen */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Scene container */
+.scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Flower */
+.flower {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform-origin: bottom;
+  animation: sway 4s ease-in-out infinite;
+}
+
+/* Stem */
+.stem {
+  position: relative;
+  width: 6px;
+  height: 200px;
+  background-color: #005b4f;
+  margin: 0 auto;
+}
+
+/* Leaves */
+.leaf {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  background-color: #00796b;
+  border-radius: 50%;
+  animation: leaf-wave 4s ease-in-out infinite;
+}
+
+.leaf.left {
+  top: 50px;
+  left: -30px;
+  transform: rotate(-30deg);
+}
+
+.leaf.right {
+  top: 70px;
+  right: -30px;
+  transform: rotate(30deg);
+}
+
+/* Petals */
+.petals {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: sway 4s ease-in-out infinite;
+}
+
+.petal {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: #50e4ff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #50e4ff;
+  transform-origin: bottom;
+}
+
+.petal:nth-child(1) {
+  top: -30px;
+  left: -25px;
+}
+
+.petal:nth-child(2) {
+  top: -30px;
+  left: 25px;
+}
+
+.petal:nth-child(3) {
+  top: -70px;
+  left: 0;
+}
+
+.petal:nth-child(4) {
+  top: -30px;
+  left: 0;
+}
+
+/* Grass */
+.grass {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(to top, #006400, transparent);
+}
+
+/* Animations */
+@keyframes sway {
+  0%, 100% {
+      transform: rotate(0deg);
+  }
+  50% {
+      transform: rotate(2deg);
+  }
+}
+
+@keyframes leaf-wave {
+  0%, 100% {
+      transform: rotate(-30deg);
+  }
+  50% {
+      transform: rotate(-20deg);
+  }
+}
